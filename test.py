@@ -1,0 +1,2 @@
+killer = {'boy':'three'}
+killer

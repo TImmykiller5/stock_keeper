@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Title</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+</head>
+<body>
+<ul>
+    {% for item in stock %}
+    <li>
+
+        {{ item.quantity }} numbers of {{ item.name }}
+
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="container">
+
+    <div class="row">
+        {% for item in stock %}
+<div class="card col-sm-6 myspace" >
+  <h5 class="card-header">{{ item.name }}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ item.quantity }}</h5>
+    <p class="card-text">Bought for {{ item.PurchasePrice }} and selling for {{ item.SellingPrice }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+  </div>
+        {% endfor %}
+</div>
+
+    </div>
+
+</body>
+
+</html>
